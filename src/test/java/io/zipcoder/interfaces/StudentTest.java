@@ -42,7 +42,6 @@ public class StudentTest {
     @Test
     public void getTotalStudyTime() {
         Student testStudent = new Student(2l, "bob");
-
         Double expected = 0.0;
 
         assertEquals(expected, testStudent.getTotalStudyTime());

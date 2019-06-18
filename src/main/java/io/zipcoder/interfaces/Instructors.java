@@ -15,9 +15,18 @@ public class Instructors extends People{
     private Instructors(){
         for(int i = 1; i<= instructorNames.length; i++){
             Instructor addTeacher = new Instructor(i+100);
-            addTeacher.setName(instructorNames[i]);
+            addTeacher.setName(instructorNames[i-1]);
             add(addTeacher);
         }
+    }
+
+    @Override
+    public Instructor[] toArray(){
+        Instructor[] instructorArray = new Instructor[personList.size()];
+        for(int i=0; i<instructorArray.length; i++){
+            instructorArray[i] = (Instructor)personList.get(i);
+        }
+        return instructorArray;
     }
 
 }

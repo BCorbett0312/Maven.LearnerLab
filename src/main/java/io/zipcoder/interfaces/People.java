@@ -54,8 +54,14 @@ public class People implements Iterable<Person> {
         return personList.size();
     }
 
-    public Object[] toArray(){
-        return personList.toArray();
+    public Person[] toArray(){
+        Person[] personArray = new Person[personList.size()];
+        for(int i = 0; i < personArray.length; i++){
+            personArray[i] = personList.get(i);
+        }
+        return personArray;
+
+
     }
 
 

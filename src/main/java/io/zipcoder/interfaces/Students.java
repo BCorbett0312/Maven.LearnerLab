@@ -23,5 +23,14 @@ public final class Students extends People {
 
     }
 
+    @Override
+    public Student[] toArray(){
+        Student[] studentArray = new Student[personList.size()];
+        for(int i = 0; i<studentArray.length; i++){
+            studentArray[i] = (Student) personList.get(i);
+        }
+        return studentArray;
+    }
+
 
 }
