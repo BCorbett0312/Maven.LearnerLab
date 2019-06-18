@@ -4,8 +4,13 @@ public class Student extends Person implements Learner {
     Double totalStudyTime;
 
 
-    public Student(Long id, String name) {
+    public Student(long id, String name) {
         super(id, name);
+        totalStudyTime = 0.0;
+    }
+
+    public Student(long id){
+        super(id);
         totalStudyTime = 0.0;
     }
 

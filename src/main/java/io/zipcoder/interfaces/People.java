@@ -19,7 +19,7 @@ public class People implements Iterable<Person> {
         personList.add(person);
     }
 
-    public Person findById(Long id){
+    public Person findById(long id){
         for(Person person: personList){
             if(person.getId() == id){
                 return person;
@@ -36,7 +36,7 @@ public class People implements Iterable<Person> {
         return personList.remove(person);
     }
 
-    public Boolean remove(Long id){
+    public Boolean remove(long id){
         for(Person person: personList){
             if(person.getId() == id){
                 remove(person);

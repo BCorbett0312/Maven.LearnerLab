@@ -9,11 +9,11 @@ public class TestPerson {
         Person person = new Person(100L, "Ben");
 
         String expected = "Ben";
-        Long expectedNum = 100L;
+
 
 
         assertEquals(expected, person.getName());
-        assertEquals(expectedNum, person.getId());
+        assertEquals(100L, person.getId());
 
     }
 
