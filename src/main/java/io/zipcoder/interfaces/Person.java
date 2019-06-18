@@ -1,7 +1,7 @@
 package io.zipcoder.interfaces;
 
 public class Person {
-    final Long id;
+    final long id;
     private String name;
 
     public Person(long id, String name){

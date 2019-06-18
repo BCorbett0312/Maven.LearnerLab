@@ -1,9 +1,11 @@
 package io.zipcoder.interfaces;
 
-public class Instructors extends People{
+public class Instructors extends People<Instructor>{
     private static Instructors INSTANCE;
 
     private final String[] instructorNames = {"Dolio", "Kris", "Wilhelm", "Froiland"};
+
+
 
     public static Instructors getInstance(){
         if(INSTANCE == null){
@@ -11,6 +13,9 @@ public class Instructors extends People{
         }
         return INSTANCE;
     }
+
+
+
 
     private Instructors(){
         for(int i = 1; i<= instructorNames.length; i++){
@@ -20,11 +25,12 @@ public class Instructors extends People{
         }
     }
 
+
     @Override
     public Instructor[] toArray(){
         Instructor[] instructorArray = new Instructor[personList.size()];
         for(int i=0; i<instructorArray.length; i++){
-            instructorArray[i] = (Instructor)personList.get(i);
+            instructorArray[i] = personList.get(i);
         }
         return instructorArray;
     }

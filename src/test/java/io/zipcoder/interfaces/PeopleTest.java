@@ -5,57 +5,65 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class PeopleTest {
+    private final String[] studentNames = {"Ben C", "Dashya", "Bob", " Stefun", "Joann", "Sputnika", "Edward",
+            "Alex I", "Alex B", "Angelica", "Robert", "Andrew", "Henry", "Erick", "Reese", "Ajulu", "Ben R", "Justin", "Conner"};
+
+
 
     @Test
     public void add() {
-        People peopleList = new People();
-        Person person1 = new Person(1L, "Ben");
-        Person person2 = new Person(2L, "Ed");
+        Students students = Students.getInstance();
+        Student person1 = new Student(1L, "Ben");
+        Student person2 = new Student(2L, "Ed");
+        Student person3 = new Student(3L, "Stefun");
+        students.add(person1);
+        students.add(person2);
 
-        peopleList.add(person1);
+        assertTrue(students.contains(person1));
+        assertTrue(students.contains(person2));
+        assertFalse(students.contains(person3));
 
 
-        assertTrue(peopleList.contains(person1));
-        assertFalse(peopleList.contains(person2));
+
 
     }
 
     @Test
     public void findById() {
-        People peopleList = new People();
-        Person person1 = new Person(1L, "Ben");
-        Person person2 = new Person(2L, "Ed");
+        Students students = Students.getInstance();
+        Student person1 = new Student(66L, "Ben");
+        Student person2 = new Student(2L, "Ed");
 
-        peopleList.add(person1);
-        peopleList.add(person2);
+        students.add(person1);
+        students.add(person2);
 
-        Person expected = person1;
+        Student expected = person1;
 
-        assertEquals(expected, peopleList.findById(1L));
+        assertEquals(expected, students.findById(66L));
 
     }
 
     @Test
     public void remove() {
-        People peopleList = new People();
-        Person person1 = new Person(1L, "Ben");
-        Person person2 = new Person(2L, "Ed");
+        Students students = Students.getInstance();
+        Student person1 = new Student(1L, "Ben");
+        Student person2 = new Student(2L, "Ed");
 
-        peopleList.add(person1);
-        peopleList.add(person2);
+        students.add(person1);
+        students.add(person2);
 
-        assertTrue(peopleList.remove(person1));
+        assertTrue(students.remove(person1));
     }
 
     @Test
     public void remove1() {
-        People peopleList = new People();
-        Person person1 = new Person(1L, "Ben");
-        Person person2 = new Person(2L, "Ed");
+        Students students = Students.getInstance();
+        Student person1 = new Student(1L, "Ben");
+        Student person2 = new Student(2L, "Ed");
 
-        peopleList.add(person1);
-        peopleList.add(person2);
+        students.add(person1);
+        students.add(person2);
 
-        assertTrue(peopleList.remove(1L));
+        assertTrue(students.remove(1L));
     }
 }
